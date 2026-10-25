@@ -77,6 +77,7 @@ def test_ipython(testdir):
     child.expect_exact("In [2]: ")
     child.sendeof()
     child.sendline("y")
+    child.expect(pexpect.EOF)
     assert child.wait() == 0
 
 
